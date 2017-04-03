@@ -3,4 +3,7 @@ super simple example of image clustering with image hashes ([wavelet hashing](ht
 this is an unrealistically simple example, but this clusters "brain expanding" memes from "political compass" memes pretty well.
 
 install deps: `pip install -r requirements.txt`
+
 to run: `python cluster.py`
+
+went with wavelet hashing because of the results of my unscientific experimentation (see `basic.py`)
