@@ -18,9 +18,8 @@ for name, hashfunc in [
     true_sim_dists = []
     true_dif_dists = []
     for (a, a_n), (b, b_n) in pairs:
-        # just to check, we know 5 is a political compass meme
-        # and the others are expanding brain memes
-        if '5' in a_n or '5' in b_n:
+        # pc=political compass
+        if 'pc' in a_n or 'pc' in b_n:
             true_dif_dists.append(a - b)
         else:
             true_sim_dists.append(a - b)
