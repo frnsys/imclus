@@ -6,14 +6,18 @@ from cluster import compute_hashes, compute_dists, cluster
 
 
 if __name__ == '__main__':
-    print('computing hashes & distance matrix...')
-    hashes, fnames = compute_hashes(glob('static/img/*'))
-    mat = compute_dists(hashes)
+    try:
+        mat = np.load('data/dist_mat.npy')
+        fnames = json.load(open('data/fnames.json', 'r'))
+    except FileNotFoundError:
+        print('computing hashes & distance matrix...')
+        hashes, fnames = compute_hashes(glob('static/img/*'))
+        mat = compute_dists(hashes)
 
-    np.save('data/hashes.npy', hashes)
-    with open('data/fnames.json', 'w') as f:
-        json.dump(fnames, f)
-    np.save('data/dist_mat.npy', mat)
+        np.save('data/hashes.npy', hashes)
+        with open('data/fnames.json', 'w') as f:
+            json.dump(fnames, f)
+        np.save('data/dist_mat.npy', mat)
 
     clusters = {}
     app = Flask(__name__)
