@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form method="POST" action="{{ url_for('index') }}">
+    <p>
+        <label>cluster distance</label>
+        <input type="number" value="20" name="eps">
+    </p>
+    <p>
+        <label>min samples for cluster</label>
+        <input type="number" value="2" name="min_samples">
+    </p>
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+</form>
+
+<h2>clusters</h2>
+<ul>
+    {% for id in clusters.keys() %}
+        <li><a href="{{ url_for('view_cluster', id=id) }}">{{ '%04d' % id }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

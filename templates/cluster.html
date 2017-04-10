@@ -1,0 +1,7 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% for img in cluster %}
+    <img src="/{{ img }}">
+{% endfor %}
+{% endblock %}
+
