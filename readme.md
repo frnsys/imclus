@@ -4,6 +4,6 @@ this is an unrealistically simple example, but this clusters "brain expanding" m
 
 install deps: `pip install -r requirements.txt`
 
-to run: `python cluster.py`
+to run: `python2 server.py`
 
 went with wavelet hashing because of the results of my unscientific experimentation (see `tests.py`)
