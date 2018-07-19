@@ -1,8 +1,3 @@
 .directory
-data/*
-static/img/*
-clusters/*
-
-!static/img
-!data
-!clusters
+*.pyc
+__pycache__/
