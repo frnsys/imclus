@@ -1,3 +1,4 @@
+import os
 import imagehash
 import numpy as np
 from PIL import Image
@@ -39,3 +40,11 @@ def cluster(mat, fnames, eps, min_samples):
     for i, lbl in enumerate(labels):
         clusters[lbl].append(fnames[i])
     return clusters
+
+def create_directory(directory):
+    try:
+        os.makedirs(directory)
+        return True
+    except OSError:
+        if not os.path.isdir(directory): return False
+        return True
