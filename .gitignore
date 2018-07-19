@@ -1,4 +1,8 @@
 .directory
-data/
-static/img/
-clusters/
+data/*
+static/img/*
+clusters/*
+
+!static/img
+!data
+!clusters
